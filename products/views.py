@@ -1,4 +1,3 @@
-# views.py
 from rest_framework import generics
 from .models import Category, Product
 from .serializers import CategorySerializer, ProductSerializer
@@ -9,7 +8,6 @@ class StandardResultsSetPagination(PageNumberPagination):
     page_size_query_param = 'page_size'
     max_page_size = 100
 
-# Category Views
 class CategoryListCreateView(generics.ListCreateAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
@@ -21,7 +19,6 @@ class CategoryDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = CategorySerializer
 
 
-# Product Views
 class ProductListCreateView(generics.ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
